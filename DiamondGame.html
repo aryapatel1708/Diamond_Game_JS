@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: cursive;
+        /* background-color: #131247; */
+        color: rgb(187, 236, 255);
+        background: linear-gradient(135deg, #00416A, #E4E5E6);
+        background-attachment: fixed;
+    }
+
+    td {
+        height: 180px;
+        width: 180px;
+        border: 4px solid rgb(187, 236, 255);
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.2);
+
+    }
+    td:hover{
+        transform: scale(0.92);
+    }
+
+    img {
+        height: 210px;
+        width: 210px;
+        border-radius: 10px;
+        border-color: transparent;
+    }
+</style>
+<div>
+    <h1>&#128142; Guess The Diamond &#128142;</h1>
+</div>
+
+<body>
+
+    <table>
+        <tr>
+            <td onclick="game(1)"><img id="1"></td>
+            <td onclick="game(2)"><img id="2"></td>
+            <td onclick="game(3)"><img id="3"></td>
+        </tr>
+        <tr>
+            <td onclick="game(4)"><img id="4"></td>
+            <td onclick="game(5)"><img id="5"></td>
+            <td onclick="game(6)"><img id="6"></td>
+        </tr>
+        <tr>
+            <td onclick="game(7)"><img id="7"></td>
+            <td onclick="game(8)"><img id="8"></td>
+            <td onclick="game(9)"><img id="9"></td>
+        </tr>
+    </table>
+    <script>
+
+        let bomb1 = parseInt(Math.random() * 10);
+        let bomb2 = parseInt(Math.random() * 10);
+        let bomb3 = parseInt(Math.random() * 10);
+        let winCount = 0;
+        console.log(bomb1);
+        console.log(bomb2);
+        console.log(bomb3);
+
+        function game(id) {
+
+            if (id == bomb1 || id == bomb2 || id == bomb3) {
+                document.getElementById(id).src = "bomb.webp";
+
+                setTimeout(function openGameOver() {
+                    location.href = "DiamondOver.html"
+                }, 600)
+
+            } else {
+                document.getElementById(id).src = "diamond.webp";
+                winCount++;
+            }
+            if (winCount == 3) {
+                setTimeout(function openGameWin() {
+                    location.href = "DiamondWin.html"
+                }, 400);
+            }
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You Win!</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #0d1724, #001a33);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        .box {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 15px;
+            width: 90%;
+            max-width: 350px;
+        }
+
+        .star {
+            font-size: 60px;
+            animation: pop 1s infinite ease-in-out;
+        }
+
+        @keyframes pop {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.25); }
+            100% { transform: scale(1); }
+        }
+
+        .title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .msg {
+            margin: 10px 0;
+            color: #ccd6f6;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 20px;
+            border-radius: 10px;
+            margin-top: 15px;
+            font-weight: bold;
+            text-decoration: none;
+            background: #1dd1a1;
+            color: #003322;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <div class="star">✨</div>
+
+        <h1 class="title">You Found the Diamond!</h1>
+
+        <p class="msg">Great job! You won the game.</p>
+
+        <a href="DiamondGame.html" class="btn">Play Again</a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Over</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(circle, #2a0916, #120310);
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.04);
+            padding: 30px 25px;
+            border-radius: 14px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+        }
+
+        .boom {
+            font-size: 60px;
+            margin-bottom: 10px;
+            animation: shake 0.7s infinite;
+        }
+
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-4px); }
+            100% { transform: translateX(0); }
+        }
+
+        .title {
+            font-size: 28px;
+            color: #ff4d6d;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #bbbbc7;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 18px;
+            margin: 8px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .btn-warning {
+            background: #ff4d6d;
+            color: #200008;
+        }
+
+        .btn-ghost {
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <div class="boom">💥</div>
+
+        <h1 class="title">Game Over!</h1>
+
+        <p class="subtitle">You hit a bomb. Try again and win the diamond!</p>
+
+        <a class="btn btn-warning" href="DiamondGame.html">Try Again</a>
+        <a class="btn btn-ghost" href="menu.html">Main Menu</a>
+    </div>
+
+</body>
+
+</html>
